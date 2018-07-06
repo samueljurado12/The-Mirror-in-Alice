@@ -142,15 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunks:
   - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
+  - {fileID: 1540520888624016, guid: af65f0ade2227e543ba0030156030e33, type: 2}
   - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
-  - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
-  - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
-  - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
-  - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
-  - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
-  - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
-  - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
-  - {fileID: 1540520888624016, guid: c59f694f40295164fabae29e5408c2c4, type: 2}
+  - {fileID: 1540520888624016, guid: af65f0ade2227e543ba0030156030e33, type: 2}
   speed: 5
   chunksAhead: 5
 --- !u!4 &575460467
