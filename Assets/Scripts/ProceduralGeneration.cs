@@ -13,7 +13,6 @@ public class ProceduralGeneration : MonoBehaviour {
 	private int lastChunkIndex = -1;
 	private int numberOfGeneratedChunks = 0;
 
-	// Use this for initialization
 	void Start () {
 		List<GameObject> startingChunks = new List<GameObject>();
 		this.generatedChunks = new List<GameObject> ();
@@ -32,7 +31,6 @@ public class ProceduralGeneration : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
 	void Update () {
 		for (int i = 0; i < this.generatedChunks.Count; i++) {
 			GameObject chunk = this.generatedChunks [i];
