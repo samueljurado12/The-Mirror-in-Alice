@@ -42,4 +42,8 @@ public class Swapper : MonoBehaviour {
         upperScreenCanCatch = !upperScreenCanCatch; 
     }
 
+    public static bool getUpperScreenCanCatch() {
+        return upperScreenCanCatch;
+    }
+
 }
