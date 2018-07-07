@@ -70,7 +70,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 //	currentState = PlayerState.WALKING;
                 //}
 
-                if (Input.GetButton("Jump"+playerNumber)) {
+                if (Input.GetButtonDown("Jump"+playerNumber)) {
                     velocity.y = jumpForce;
                     currentState = PlayerState.JUMPING;
                     break;
@@ -113,7 +113,7 @@ public class PlayerBehaviour : MonoBehaviour {
                         currentState = PlayerState.WALKING;
                     }
                 } else {
-                    if (Input.GetButton("Jump"+playerNumber) && airJumps > 0) {
+                    if (Input.GetButtonDown("Jump"+playerNumber) && airJumps > 0) {
                         Debug.Log(airJumps);
                         velocity.y = jumpForce;
                         airJumps--;
@@ -129,7 +129,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 if (horizontalDir == 0) {
                     currentState = PlayerState.STAND;
                 }
-                if (Input.GetButton("Jump"+playerNumber)) {
+                if (Input.GetButtonDown("Jump"+playerNumber)) {
                     velocity.y = jumpForce;
                     currentState = PlayerState.JUMPING;
                     break;
