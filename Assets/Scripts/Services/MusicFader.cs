@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class MusicFader {
+public class MusicFader : MonoBehaviour {
 
 	public static IEnumerator fadeIn(AudioSource audio, float fadeTime, float volume) {
         while(audio.volume < volume) {
