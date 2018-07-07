@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-
 	private Rigidbody2D rb;
+
 	[Range (1, 2)]
 	public int playerNumber;
+
 	public float speed;
 	public float jumpForce;
-	public float jumpSpeed1;
-	public float jumpSpeed2;
+	public float jumpSpeed;
+	public float jumpRate;
 	public float gravityForce = 5;
 	public float maxFallSpeed = 10;
 	public float fallForce;
+
+	public int airJumps;
+	public float maxTime;
+
 	public bool onGround;
 	public Vector2 velocity;
 	public PlayerState currentState;
-	float horizontalDir = 0;
-	public int airJumps;
 
-	public float maxTime;
+	float horizontalDir = 0;
 	float airTime;
 	bool jumped = false;
 
@@ -63,7 +66,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		switch (currentState) {
 		case PlayerState.STAND:
 			velocity.x = 0;
-			jumpSpeed1 = jumpSpeed2;
+			jumpSpeed = jumpRate;
 
 			if (!onGround) {
 				currentState = PlayerState.JUMPING;
@@ -105,16 +108,9 @@ public class PlayerBehaviour : MonoBehaviour {
 			} else {
 				if (jumped) {
 					if (Input.GetButtonDown ("Jump" + playerNumber) && airJumps > 0) {
-						/*velocity.y = Mathf.Min (jumpForce * secondJumpSpeed, jumpForce);
-						secondAirTime -= 0.25f;
-						if (secondJumpSpeed <= 1) {					//Progresive Jump
-							secondJumpSpeed += 0.05f;
-						}*/
-						//rb.AddForce (Vector2.up, ForceMode2D.Impulse);
-						/////velocity.y = secondJumpSpeed;
 						airJumps--;
 						airTime = maxTime;
-						jumpSpeed1 = jumpSpeed2;
+						jumpSpeed = jumpRate;
 						currentState = PlayerState.DOUBLEJUMPING;
 						break;
 					}
@@ -146,7 +142,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			break;
 
 		case PlayerState.WALKING:
-			jumpSpeed1 = jumpSpeed2;
+			jumpSpeed = jumpRate;
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
 
 			if (horizontalDir == 0) {
@@ -167,10 +163,10 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void progresiveJump(){
 		if (Input.GetButton ("Jump" + playerNumber) && airTime > 0) {
-			velocity.y = Mathf.Min (jumpForce * jumpSpeed1, jumpForce);
+			velocity.y = Mathf.Min (jumpForce * jumpSpeed, jumpForce);
 			airTime -= 0.25f;
-			if (jumpSpeed1 <= 1) {
-				jumpSpeed1 += 0.05f;
+			if (jumpSpeed <= 1) {
+				jumpSpeed += 0.05f;
 			}
 			jumped = true;
 		}
