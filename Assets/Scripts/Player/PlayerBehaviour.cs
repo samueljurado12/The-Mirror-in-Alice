@@ -69,7 +69,8 @@ public class PlayerBehaviour : MonoBehaviour {
                 //	horizontalDir = 1;
                 //	currentState = PlayerState.WALKING;
                 //}
-                if (Input.GetKeyDown(KeyCode.Space)) {
+
+                if (Input.GetButton("Jump"+playerNumber)) {
                     velocity.y = jumpForce;
                     currentState = PlayerState.JUMPING;
                     break;
@@ -80,6 +81,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 velocity.y -= gravityForce * Time.deltaTime;
                 Mathf.Max(velocity.y, -maxFallSpeed);
                 horizontalDir = Input.GetAxis("Horizontal" + playerNumber);
+
                 //if (Input.GetKey(KeyCode.A)) {
                 //    horizontalDir = -1;
                 //    //lastDir = horizontalDir;
@@ -91,6 +93,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 //} else {
                 //    horizontalDir = 0;
                 //}
+
                 if (Input.GetKey(KeyCode.S)) {
                     velocity.y -= gravityForce * Time.deltaTime * fallForce;
                 }
@@ -110,7 +113,7 @@ public class PlayerBehaviour : MonoBehaviour {
                         currentState = PlayerState.WALKING;
                     }
                 } else {
-                    if (Input.GetKeyDown(KeyCode.Space) && airJumps > 0) {
+                    if (Input.GetButton("Jump"+playerNumber) && airJumps > 0) {
                         Debug.Log(airJumps);
                         velocity.y = jumpForce;
                         airJumps--;
@@ -126,7 +129,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 if (horizontalDir == 0) {
                     currentState = PlayerState.STAND;
                 }
-                if (Input.GetKeyDown(KeyCode.Space)) {
+                if (Input.GetButton("Jump"+playerNumber)) {
                     velocity.y = jumpForce;
                     currentState = PlayerState.JUMPING;
                     break;
