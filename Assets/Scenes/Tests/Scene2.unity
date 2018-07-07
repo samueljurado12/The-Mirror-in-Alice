@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1449152144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.42, z: -10}
+  m_LocalPosition: {x: 0, y: -4.77, z: -10}
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -279,10 +279,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99dcc618fe48b074e99bef9eae4205cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 5
-  gravityForce: 10
+  speed: 8
+  jumpForce: 8
+  gravityForce: 12
   maxFallSpeed: 100
+  fallForce: 2.5
   onGround: 0
   velocity: {x: 0, y: 0}
   currentState: 0
@@ -382,7 +383,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1694898734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.84, z: 0}
+  m_LocalPosition: {x: 0, y: -1.22, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

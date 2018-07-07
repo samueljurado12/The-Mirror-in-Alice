@@ -10,10 +10,14 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float jumpForce;
 	public float gravityForce = 5;
 	public float maxFallSpeed = 10;
+	public float fallForce;
 	public bool onGround;
 	public Vector2 velocity;
 	public PlayerState currentState;
 	float horizontalDir = 0;
+	//float lastDir = 0;
+	float availableJumps = 2;
+
 
 	void Start(){
 		rb = GetComponent<Rigidbody2D> ();
@@ -47,6 +51,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	void velocityUpdate(){
 		switch (currentState) {
 		case PlayerState.STAND:
+			velocity.x = 0;
+			availableJumps = 2;
 			if (!onGround) {
 				currentState = PlayerState.JUMPING;
 				break;
@@ -58,8 +64,9 @@ public class PlayerBehaviour : MonoBehaviour {
 				horizontalDir = 1;
 				currentState = PlayerState.WALKING;
 			}
-			if (Input.GetKey (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.Space)) {
 				velocity.y = jumpForce;
+				availableJumps--;
 				currentState = PlayerState.JUMPING;
 				break;
 			}
@@ -68,17 +75,62 @@ public class PlayerBehaviour : MonoBehaviour {
 		case PlayerState.JUMPING:
 			velocity.y -= gravityForce * Time.deltaTime;
 			Mathf.Max (velocity.y, -maxFallSpeed);
+			if (Input.GetKey (KeyCode.A)) {
+				horizontalDir = -1;
+				//lastDir = horizontalDir;
+				//speedReduction = 0.95f;
+			} else if (Input.GetKey (KeyCode.D)) {
+				horizontalDir = 1;
+				//lastDir = horizontalDir;
+				//speedReduction = 0.95f;
+			} else {
+				horizontalDir = 0;
+			}
+			if (Input.GetKey (KeyCode.S)) {
+				velocity.y -= gravityForce * Time.deltaTime * fallForce;
+			}
+			if (horizontalDir == 0) {
+				velocity.x = 0;//lastDir * speed * speedReduction;
+				//peedReduction -= 0.01f;
+			} else {
+				velocity.x = horizontalDir * speed;
+			}
+
 			if (onGround) {
-				currentState = PlayerState.STAND;
+				//speedReduction = 0.95f;
+				//lastDir = 0;
+				if (horizontalDir == 0) {
+					currentState = PlayerState.STAND;
+				} else {
+					currentState = PlayerState.WALKING;
+				}
+			} else {
+				if (Input.GetKeyDown (KeyCode.Space) && availableJumps > 0) {
+					Debug.Log (availableJumps);
+					velocity.y = jumpForce;
+					availableJumps--;
+					break;
+				}
 			}
 			break;
 
 		case PlayerState.WALKING:
-			if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)){
+			availableJumps = 2;
+			if (Input.GetKey (KeyCode.A)) {
+				horizontalDir = -1;
+			} else if (Input.GetKey (KeyCode.D)) {
+				horizontalDir = 1;
+			} else {
 				horizontalDir = 0;
+				currentState = PlayerState.STAND;
+			}
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				availableJumps--;
+				velocity.y = jumpForce;
+				currentState = PlayerState.JUMPING;
+				break;
 			}
 			velocity.x = speed * horizontalDir;
-			currentState = PlayerState.STAND;
 			break;
 		}
 	}
