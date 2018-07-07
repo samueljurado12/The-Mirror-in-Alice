@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4458792636834718}
   - component: {fileID: 212881471161589462}
   - component: {fileID: 114224464564396274}
+  - component: {fileID: 68759109877957556}
   m_Layer: 0
   m_Name: Suelo_Ciudad_01(2048x249)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,12 +36,47 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1117896769055066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3441005, y: 1.47, z: 0}
+  m_LocalPosition: {x: -5.8045416, y: -1.8048853, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &68759109877957556
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117896769055066}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.4947524, y: -1.0311652}
+  - {x: -11.672528, y: -0.6684271}
+  - {x: -11.749011, y: -0.31780684}
+  - {x: -11.369021, y: -0.08976805}
+  - {x: -8.992878, y: -0.2554413}
+  - {x: -8.129197, y: -0.22575104}
+  - {x: -7.1755924, y: -0.07740724}
+  - {x: -4.8241568, y: -0.10603738}
+  - {x: -2.2980108, y: -0.4798981}
+  - {x: -0.6665182, y: -0.05379343}
+  - {x: 0.47320843, y: 0.98084396}
+  - {x: 1.9137442, y: 1.051674}
+  - {x: 2.5099785, y: 0.81498885}
+  - {x: 4.2796373, y: 0.75360894}
+  - {x: 9.409218, y: 1.134896}
+  - {x: 10.716086, y: -0.22778523}
+  - {x: 11.782711, y: -0.5235542}
+  - {x: 11.328794, y: -1.5111843}
+  - {x: 4.1080894, y: -0.85034335}
+  - {x: -0.7428131, y: -1.0451728}
 --- !u!114 &114224464564396274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e2dfe877c5a3a43bb631987883a8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 41.124496
+  length: 25.6
 --- !u!212 &212881471161589462
 SpriteRenderer:
   m_ObjectHideFlags: 1

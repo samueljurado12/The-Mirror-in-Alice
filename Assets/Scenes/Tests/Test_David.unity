@@ -296,22 +296,17 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114848470712261188, guid: 495b5333ef270424081ecff2581330da,
-        type: 2}
-      propertyPath: chunks.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4258878626937580, guid: 495b5333ef270424081ecff2581330da, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.9204185
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4258878626937580, guid: 495b5333ef270424081ecff2581330da, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.041928843
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4258878626937580, guid: 495b5333ef270424081ecff2581330da, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -9.892651
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4258878626937580, guid: 495b5333ef270424081ecff2581330da, type: 2}
       propertyPath: m_LocalRotation.x
@@ -333,34 +328,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1243974889303624, guid: 495b5333ef270424081ecff2581330da, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114848470712261188, guid: 495b5333ef270424081ecff2581330da,
-        type: 2}
-      propertyPath: chunks.Array.data[1]
-      value: 
-      objectReference: {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a,
-        type: 2}
-    - target: {fileID: 114848470712261188, guid: 495b5333ef270424081ecff2581330da,
-        type: 2}
-      propertyPath: chunks.Array.data[2]
-      value: 
-      objectReference: {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a,
-        type: 2}
-    - target: {fileID: 114848470712261188, guid: 495b5333ef270424081ecff2581330da,
-        type: 2}
-      propertyPath: chunks.Array.data[3]
-      value: 
-      objectReference: {fileID: 1540520888624016, guid: af65f0ade2227e543ba0030156030e33,
-        type: 2}
-    - target: {fileID: 114848470712261188, guid: 495b5333ef270424081ecff2581330da,
-        type: 2}
-      propertyPath: chunks.Array.data[0]
-      value: 
-      objectReference: {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 495b5333ef270424081ecff2581330da, type: 2}
   m_IsPrefabParent: 0
