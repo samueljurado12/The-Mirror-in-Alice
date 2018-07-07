@@ -5,16 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-	public static void LoadMainMenu () {
-		SceneManager.LoadScene ("main");
-	}
+    public static void LoadMainMenu() {
+        SceneManager.LoadScene("01_MainMenu");
+    }
 
-	public static void LoadEnd () {
-		SceneManager.LoadScene ("end");
-	}
+    public void LoadScene(string sceneName) {
+        SceneManager.LoadScene(sceneName);
+    }
 
-	public static void LoadGame () {
-		SceneManager.LoadScene ("game");
-	}
+    public void exit() {
+        Debug.Log("Exit requested");
+        Application.Quit();
+    }
 
 }
