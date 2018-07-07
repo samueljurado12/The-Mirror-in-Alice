@@ -82,7 +82,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
 
 
-			if (Input.GetKey (KeyCode.S)) {
+			if (Input.GetAxis ("Vertical" + playerNumber) != 0) {
 				velocity.y -= gravityForce * Time.deltaTime * fallForce;
 			}
 			if (horizontalDir == 0) {
@@ -99,7 +99,6 @@ public class PlayerBehaviour : MonoBehaviour {
 				}
 			} else {
 				if (Input.GetButtonDown ("Jump" + playerNumber) && airJumps > 0) {
-					Debug.Log (airJumps);
 					velocity.y = jumpForce;
 					airJumps--;
 					break;
