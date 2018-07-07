@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	public static void LoadMainMenu () {
+		SceneManager.LoadScene ("main");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public static void LoadEnd () {
+		SceneManager.LoadScene ("end");
 	}
+
+	public static void LoadGame () {
+		SceneManager.LoadScene ("game");
+	}
+
 }
