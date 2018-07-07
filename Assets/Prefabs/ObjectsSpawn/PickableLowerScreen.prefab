@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4045582155875716}
   - component: {fileID: 114842983289331264}
   m_Layer: 0
-  m_Name: PickableUpperScreen
+  m_Name: PickableLowerScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,12 +36,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4521705160025894}
   - component: {fileID: 33770342162607602}
-  - component: {fileID: 135147346188574230}
   - component: {fileID: 23545625180474060}
   - component: {fileID: 114615959945847898}
+  - component: {fileID: 61731062610653324}
   m_Layer: 0
   m_Name: Catchable
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,12 +55,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4753215033772736}
   - component: {fileID: 33707564709759336}
-  - component: {fileID: 65044812737356702}
   - component: {fileID: 23491151509569910}
   - component: {fileID: 114704931082642596}
+  - component: {fileID: 61938208537941236}
   m_Layer: 0
   m_Name: Dodgeable
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,18 +188,56 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1391352925114772}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65044812737356702
-BoxCollider:
+--- !u!61 &61731062610653324
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1391352925114772}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!61 &61938208537941236
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1946252003710680}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &114615959945847898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,8 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8fe609e994c34a90afe6bf67c175c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCatchable: 0
-  score: 0
+  isCatchable: 1
+  score: 20
 --- !u!114 &114704931082642596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCatchable: 0
-  score: 0
+  score: 20
 --- !u!114 &114842983289331264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,16 +275,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35a88be4657e074e8058c010d525cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upscreenObject: 1
---- !u!135 &135147346188574230
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1391352925114772}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  upscreenObject: 0
