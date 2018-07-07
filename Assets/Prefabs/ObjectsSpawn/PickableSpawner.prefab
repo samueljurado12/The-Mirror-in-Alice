@@ -52,3 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpawns: 1
+  spawnableObject: {fileID: 1378132545223608, guid: 3aaec89066a682c47bc0d87a41c11b60,
+    type: 2}
