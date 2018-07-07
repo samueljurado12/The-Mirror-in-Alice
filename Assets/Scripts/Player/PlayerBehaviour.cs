@@ -16,7 +16,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public PlayerState currentState;
 	float horizontalDir = 0;
 	//float lastDir = 0;
-	float availableJumps = 2;
+	public int airJumps = 1;
 
 
 	void Start(){
@@ -52,7 +52,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		switch (currentState) {
 		case PlayerState.STAND:
 			velocity.x = 0;
-			availableJumps = 2;
+			airJumps = 1;
 			if (!onGround) {
 				currentState = PlayerState.JUMPING;
 				break;
@@ -66,7 +66,6 @@ public class PlayerBehaviour : MonoBehaviour {
 			}
 			if (Input.GetKeyDown (KeyCode.Space)) {
 				velocity.y = jumpForce;
-				availableJumps--;
 				currentState = PlayerState.JUMPING;
 				break;
 			}
@@ -105,17 +104,17 @@ public class PlayerBehaviour : MonoBehaviour {
 					currentState = PlayerState.WALKING;
 				}
 			} else {
-				if (Input.GetKeyDown (KeyCode.Space) && availableJumps > 0) {
-					Debug.Log (availableJumps);
+				if (Input.GetKeyDown (KeyCode.Space) && airJumps > 0) {
+					Debug.Log (airJumps);
 					velocity.y = jumpForce;
-					availableJumps--;
+					airJumps--;
 					break;
 				}
 			}
 			break;
 
 		case PlayerState.WALKING:
-			availableJumps = 2;
+			airJumps = 1;
 			if (Input.GetKey (KeyCode.A)) {
 				horizontalDir = -1;
 			} else if (Input.GetKey (KeyCode.D)) {
@@ -125,12 +124,14 @@ public class PlayerBehaviour : MonoBehaviour {
 				currentState = PlayerState.STAND;
 			}
 			if (Input.GetKeyDown (KeyCode.Space)) {
-				availableJumps--;
 				velocity.y = jumpForce;
 				currentState = PlayerState.JUMPING;
 				break;
 			}
 			velocity.x = speed * horizontalDir;
+			if (!onGround) {
+				currentState = PlayerState.JUMPING;
+			}
 			break;
 		}
 	}
