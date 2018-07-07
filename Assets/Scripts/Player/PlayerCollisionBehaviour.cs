@@ -52,10 +52,9 @@ public class PlayerCollisionBehaviour : MonoBehaviour
 				Swapper.upperScreenCanCatch = !Swapper.upperScreenCanCatch;
 
                 if (playerHasZeroLives) {/*Game Over*/}
-                isCatcher = !isCatcher;
             }
 
-            //Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
