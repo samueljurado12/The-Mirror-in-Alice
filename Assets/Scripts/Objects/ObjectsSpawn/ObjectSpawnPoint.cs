@@ -2,11 +2,8 @@
 
 public class ObjectSpawnPoint : MonoBehaviour {
 
-    public void spawn(GameObject[] spawnableObjects) {
-        Instantiate(pickRandomSpawnableObject(spawnableObjects), this.transform);
+    public void spawn(GameObject spawnableObject) {
+        Instantiate(spawnableObject, this.transform);
     }
 
-    private GameObject pickRandomSpawnableObject(GameObject[] objects) {
-        return objects[Random.Range(0, objects.Length)];
-    }
 }

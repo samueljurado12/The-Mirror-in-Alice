@@ -21,8 +21,11 @@ public class Swapper : MonoBehaviour {
     }
 
     private void Update() {
+        if (upscreenObject) {
             drawObjectsUpperScreen();
+        } else {
             drawObjectsLowerScreen();
+        }
     }
 
     private void drawObjectsLowerScreen() {
