@@ -21,8 +21,11 @@ public class Swapper : MonoBehaviour {
     }
 
     private void Update() {
+        if (upscreenObject) {
             drawObjectsUpperScreen();
+        } else {
             drawObjectsLowerScreen();
+        }
     }
 
     private void drawObjectsLowerScreen() {
@@ -36,7 +39,6 @@ public class Swapper : MonoBehaviour {
     }
 
     public void swap() {
-        Debug.Log("Now this is " + (upscreenObject == upperScreenCanCatch ? "up":"down"));
         upperScreenCanCatch = !upperScreenCanCatch; 
     }
 

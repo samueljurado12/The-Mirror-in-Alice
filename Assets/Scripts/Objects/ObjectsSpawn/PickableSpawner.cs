@@ -6,7 +6,7 @@ public class PickableSpawner : MonoBehaviour {
     [SerializeField]
     private float maxSpawns;
     [SerializeField]
-    private GameObject[] spawnableObjects;
+    private GameObject spawnableObject;
 
     private List<ObjectSpawnPoint> possibleSpawnPositions = new List<ObjectSpawnPoint>();
 
@@ -20,7 +20,7 @@ public class PickableSpawner : MonoBehaviour {
         for(int i = 0; i < maxSpawns; i++) {
             ObjectSpawnPoint selected = pickRandomPosition(possibleSpawnPositions);
             possibleSpawnPositions.Remove(selected);            
-            selected.spawn(spawnableObjects);
+            selected.spawn(spawnableObject);
         }
         
 	}
