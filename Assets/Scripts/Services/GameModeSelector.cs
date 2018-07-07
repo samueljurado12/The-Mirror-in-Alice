@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class GameModeSelector : MonoBehaviour {
+public class GameModeSelector : MonoBehaviour/*, ISelectHandler */{
 
     public Button vsModeButton, coopModeButton, endlessModeButton;
+    public Image help;
 
 	// Use this for initialization
 	void Start () {
@@ -36,4 +38,15 @@ public class GameModeSelector : MonoBehaviour {
         //Output this to console when the Button is clicked
         Debug.Log("You have clicked the endless mode!");
     }
+
+    //public void OnSelect(BaseEventData baseEventData) {
+    //    switch (baseEventData.selectedObject.name) {
+    //        case "VsButton":
+    //            help.material.color = Color.black;
+    //            break;
+    //        default:
+    //            break;
+    //    }
+
+    //}
 }
