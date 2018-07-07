@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Swapper : MonoBehaviour {
 
-    public static bool upperScreenCanCatch;
+    public static bool upperScreenCanCatch = true;
 
     private PickableObject scoreUp, scoreDown;
 
@@ -13,7 +13,6 @@ public class Swapper : MonoBehaviour {
     private void Start() {
         scoreUp = GetComponentsInChildren<PickableObject>()[0];
         scoreDown = GetComponentsInChildren<PickableObject>()[1];
-        upperScreenCanCatch = Random.value > 0.5;
         drawObjectsUpperScreen();
         drawObjectsLowerScreen();
         
