@@ -208,23 +208,13 @@ MonoBehaviour:
   playerNumber: 1
   speed: 8
   jumpForce: 10
+  jumpSpeed: 0.6
+  jumpRate: 0.6
   gravityForce: 30
   maxFallSpeed: 20
   fallForce: 2.5
+  airJumps: 1
+  maxTime: 1.5
   onGround: 0
   velocity: {x: 0, y: 0}
   currentState: 0
-  airJumps: 1
---- !u!114 &114311677991502134
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1557795065019662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75be0a6b006584738a0b75fb68a790d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCatcher: 0
-  isPlayerOne: 1
