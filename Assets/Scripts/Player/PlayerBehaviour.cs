@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
+
 	private Rigidbody2D rb;
 	[Range (1, 2)]
 	public int playerNumber;
@@ -16,7 +17,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public Vector2 velocity;
 	public PlayerState currentState;
 	float horizontalDir = 0;
-	public int airJumps = 1;
+	public int airJumps = 2;
 
 
 	void Start () {
@@ -52,7 +53,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		switch (currentState) {
 		case PlayerState.STAND:
 			velocity.x = 0;
-			airJumps = 1;
+			airJumps = 2;
 			if (!onGround) {
 				currentState = PlayerState.JUMPING;
 				break;
@@ -69,6 +70,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			break;
 
 			if (Input.GetButtonDown ("Jump" + playerNumber)) {
+				airJumps--;
 				velocity.y = jumpForce;
 				currentState = PlayerState.JUMPING;
 				break;
@@ -81,7 +83,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
 
 
-			if (Input.GetKey (KeyCode.S)) {
+			if (Input.GetAxis ("Vertical" + playerNumber) != 0) {
 				velocity.y -= gravityForce * Time.deltaTime * fallForce;
 			}
 			if (horizontalDir == 0) {
@@ -98,7 +100,6 @@ public class PlayerBehaviour : MonoBehaviour {
 				}
 			} else {
 				if (Input.GetButtonDown ("Jump" + playerNumber) && airJumps > 0) {
-					Debug.Log (airJumps);
 					velocity.y = jumpForce;
 					airJumps--;
 					break;
@@ -107,13 +108,14 @@ public class PlayerBehaviour : MonoBehaviour {
 			break;
 
 		case PlayerState.WALKING:
-			airJumps = 1;
+			airJumps = 2;
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
 
 			if (horizontalDir == 0) {
 				currentState = PlayerState.STAND;
 			}
 			if (Input.GetButtonDown ("Jump" + playerNumber)) {
+				airJumps--;
 				velocity.y = jumpForce;
 				currentState = PlayerState.JUMPING;
 				break;
@@ -133,5 +135,4 @@ public class PlayerBehaviour : MonoBehaviour {
 		WALKING}
 
 	;
-
 }
