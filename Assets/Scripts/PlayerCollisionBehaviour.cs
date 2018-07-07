@@ -25,7 +25,7 @@ public class PlayerCollisionBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("target"))
         {
-            Target target = collision.gameObject.GetComponent<Target>();
+            PickableObject target = collision.gameObject.GetComponent<PickableObject>();
 
             if (target.isCatchable == isCatcher)
             {
