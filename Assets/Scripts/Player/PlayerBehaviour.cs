@@ -25,6 +25,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public PlayerState currentState;
 
 	float horizontalDir = 0;
+	float verticalDir = 0;
 	float airTime;
 	bool jumped = false;
 
@@ -91,9 +92,9 @@ public class PlayerBehaviour : MonoBehaviour {
 			velocity.y -= gravityForce * Time.deltaTime;
 			velocity.y = Mathf.Max (velocity.y, -maxFallSpeed);
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
+			verticalDir = Input.GetAxis ("Vertical" + playerNumber);
 
-
-			if (Input.GetAxis ("Vertical" + playerNumber) == -1) {
+			if (verticalDir == -1) {
 				velocity.y -= gravityForce * Time.deltaTime * fallForce;
 			}
 			if (horizontalDir == 0) {
@@ -126,7 +127,9 @@ public class PlayerBehaviour : MonoBehaviour {
 			velocity.y -= gravityForce * Time.deltaTime;
 			velocity.y = Mathf.Max (velocity.y, -maxFallSpeed);
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
-			if (Input.GetAxis ("Vertical" + playerNumber) == -1) {
+			verticalDir = Input.GetAxis ("Vertical" + playerNumber);
+
+			if (verticalDir == -1) {
 				velocity.y -= gravityForce * Time.deltaTime * fallForce;
 			}
 			if (horizontalDir == 0) {
