@@ -9,7 +9,7 @@ public class ButtonHighlighted : MonoBehaviour, ISelectHandler, IPointerEnterHan
 {
     public Image help;
 
-    //// When highlighted with mouse.
+    // When highlighted with mouse.
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (eventData != null)
@@ -18,28 +18,10 @@ public class ButtonHighlighted : MonoBehaviour, ISelectHandler, IPointerEnterHan
             btn = eventData.pointerEnter.GetComponentInParent<Button>();
             btn.Select();
 
-            //switch (eventData.pointerEnter.name)
-            //{
-            //    case "VsMode":                 
-            //        Debug.Log("ola k ase, vs");
-            //        help.color = Color.black;
-            //        break;
-            //    case "CoopMode":
-            //        Debug.Log("ola k ase, coop");
-            //        help.color = Color.cyan;
-            //        break;
-            //    case "EndlessMode":
-            //        Debug.Log("ola k ase, endless");
-            //        help.color = Color.magenta;
-            //        break;
-            //    default:
-            //        Debug.Log("PointerEnter.name: " + eventData.pointerEnter.name);
-            //        break;
-            //}
         }
     }
 
-    // When selected with mouse.
+    // When selected with buttons or gamepad.
     public void OnSelect(BaseEventData eventData)
     {
         if (eventData != null)
