@@ -6,4 +6,8 @@ public class ObjectSpawnPoint : MonoBehaviour {
         Instantiate(spawnableObject, this.transform);
     }
 
+    private void OnDrawGizmos() {
+        Gizmos.DrawSphere(this.transform.position, 0.25f);
+    }
+
 }
