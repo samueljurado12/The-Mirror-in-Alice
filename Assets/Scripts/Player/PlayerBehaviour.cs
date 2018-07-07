@@ -12,7 +12,6 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float jumpForce;
 	public float jumpSpeed1;
 	public float jumpSpeed2;
-	public float secondJumpSpeed;
 	public float gravityForce = 5;
 	public float maxFallSpeed = 10;
 	public float fallForce;
@@ -24,7 +23,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	public float maxTime;
 	float airTime;
-	float secondAirTime;
 	bool jumped = false;
 
 
@@ -33,7 +31,6 @@ public class PlayerBehaviour : MonoBehaviour {
 		currentState = PlayerState.STAND;
 		onGround = false;
 		airTime = 0;
-		secondAirTime = 0;
 	}
 
 	void FixedUpdate () {
@@ -52,7 +49,6 @@ public class PlayerBehaviour : MonoBehaviour {
 			onGround = true;
 			airJumps = 2;
 			airTime = maxTime;
-			secondAirTime = maxTime;
 			jumped = false;
 		}
 	}
@@ -107,9 +103,6 @@ public class PlayerBehaviour : MonoBehaviour {
 					currentState = PlayerState.WALKING;
 				}
 			} else {
-				if (Input.GetButtonUp("Jump" + playerNumber)) {
-					secondAirTime = maxTime;
-				}
 				if (jumped) {
 					if (Input.GetButtonDown ("Jump" + playerNumber) && airJumps > 0) {
 						/*velocity.y = Mathf.Min (jumpForce * secondJumpSpeed, jumpForce);
@@ -118,12 +111,38 @@ public class PlayerBehaviour : MonoBehaviour {
 							secondJumpSpeed += 0.05f;
 						}*/
 						//rb.AddForce (Vector2.up, ForceMode2D.Impulse);
-						velocity.y = secondJumpSpeed;
+						/////velocity.y = secondJumpSpeed;
 						airJumps--;
+						airTime = maxTime;
+						jumpSpeed1 = jumpSpeed2;
+						currentState = PlayerState.DOUBLEJUMPING;
 						break;
 					}
 				}
 			}
+			break;
+
+		case PlayerState.DOUBLEJUMPING:
+			progresiveJump ();
+			velocity.y -= gravityForce * Time.deltaTime;
+			velocity.y = Mathf.Max (velocity.y, -maxFallSpeed);
+			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
+			if (Input.GetAxis ("Vertical" + playerNumber) == -1) {
+				velocity.y -= gravityForce * Time.deltaTime * fallForce;
+			}
+			if (horizontalDir == 0) {
+				velocity.x = 0;
+			} else {
+				velocity.x = horizontalDir * speed;
+			}
+			if (onGround) {
+				if (horizontalDir == 0) {
+					currentState = PlayerState.STAND;
+				} else {
+					currentState = PlayerState.WALKING;
+				}
+			}
+
 			break;
 
 		case PlayerState.WALKING:
@@ -161,6 +180,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public enum PlayerState {
 		STAND,
 		JUMPING,
+		DOUBLEJUMPING,
 		WALKING}
 
 	;
