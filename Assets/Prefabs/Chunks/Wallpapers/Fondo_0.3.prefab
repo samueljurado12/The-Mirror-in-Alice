@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212826519509371502}
   - component: {fileID: 114871197088583714}
   m_Layer: 0
-  m_Name: Fondo_0.2
+  m_Name: Fondo_0.3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e2dfe877c5a3a43bb631987883a8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 15.76271
+  length: 42.2888
 --- !u!212 &212826519509371502
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -86,9 +86,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: cb1e7242407df3048bead278d8996d81, type: 3}
-  m_Color: {r: 0.44381648, g: 0.15322232, b: 0.8014706, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: bafa116ba72dd29478c540964f39ba4b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
