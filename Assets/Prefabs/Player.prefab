@@ -207,6 +207,8 @@ MonoBehaviour:
   playerNumber: 1
   speed: 8
   jumpForce: 10
+  jumpSpeed1: 0.1
+  jumpSpeed2: 0.1
   gravityForce: 30
   maxFallSpeed: 20
   fallForce: 2.5

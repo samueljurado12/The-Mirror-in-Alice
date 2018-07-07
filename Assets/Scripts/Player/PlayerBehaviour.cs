@@ -10,6 +10,9 @@ public class PlayerBehaviour : MonoBehaviour {
 	public int playerNumber;
 	public float speed;
 	public float jumpForce;
+	public float jumpSpeed1;
+	public float jumpSpeed2;
+	public float secondJumpSpeed;
 	public float gravityForce = 5;
 	public float maxFallSpeed = 10;
 	public float fallForce;
@@ -17,13 +20,20 @@ public class PlayerBehaviour : MonoBehaviour {
 	public Vector2 velocity;
 	public PlayerState currentState;
 	float horizontalDir = 0;
-	public int airJumps = 2;
+	public int airJumps;
+
+	public float maxTime;
+	float airTime;
+	float secondAirTime;
+	bool jumped = false;
 
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		currentState = PlayerState.STAND;
 		onGround = false;
+		airTime = 0;
+		secondAirTime = 0;
 	}
 
 	void FixedUpdate () {
@@ -40,6 +50,10 @@ public class PlayerBehaviour : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.CompareTag ("Ground")) {
 			onGround = true;
+			airJumps = 2;
+			airTime = maxTime;
+			secondAirTime = maxTime;
+			jumped = false;
 		}
 	}
 
@@ -53,7 +67,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		switch (currentState) {
 		case PlayerState.STAND:
 			velocity.x = 0;
-			airJumps = 2;
+			jumpSpeed1 = jumpSpeed2;
+
 			if (!onGround) {
 				currentState = PlayerState.JUMPING;
 				break;
@@ -63,27 +78,20 @@ public class PlayerBehaviour : MonoBehaviour {
 			}
 
 			if (Input.GetButtonDown ("Jump" + playerNumber)) {
-				velocity.y = jumpForce;
-				currentState = PlayerState.JUMPING;
-				break;
-			}
-			break;
-
-			if (Input.GetButtonDown ("Jump" + playerNumber)) {
 				airJumps--;
-				velocity.y = jumpForce;
 				currentState = PlayerState.JUMPING;
 				break;
 			}
 			break;
 
 		case PlayerState.JUMPING:
+			progresiveJump ();
 			velocity.y -= gravityForce * Time.deltaTime;
-			Mathf.Max (velocity.y, -maxFallSpeed);
+			velocity.y = Mathf.Max (velocity.y, -maxFallSpeed);
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
 
 
-			if (Input.GetAxis ("Vertical" + playerNumber) != 0) {
+			if (Input.GetAxis ("Vertical" + playerNumber) == -1) {
 				velocity.y -= gravityForce * Time.deltaTime * fallForce;
 			}
 			if (horizontalDir == 0) {
@@ -99,16 +107,27 @@ public class PlayerBehaviour : MonoBehaviour {
 					currentState = PlayerState.WALKING;
 				}
 			} else {
-				if (Input.GetButtonDown ("Jump" + playerNumber) && airJumps > 0) {
-					velocity.y = jumpForce;
-					airJumps--;
-					break;
+				if (Input.GetButtonUp("Jump" + playerNumber)) {
+					secondAirTime = maxTime;
+				}
+				if (jumped) {
+					if (Input.GetButtonDown ("Jump" + playerNumber) && airJumps > 0) {
+						/*velocity.y = Mathf.Min (jumpForce * secondJumpSpeed, jumpForce);
+						secondAirTime -= 0.25f;
+						if (secondJumpSpeed <= 1) {					//Progresive Jump
+							secondJumpSpeed += 0.05f;
+						}*/
+						//rb.AddForce (Vector2.up, ForceMode2D.Impulse);
+						velocity.y = secondJumpSpeed;
+						airJumps--;
+						break;
+					}
 				}
 			}
 			break;
 
 		case PlayerState.WALKING:
-			airJumps = 2;
+			jumpSpeed1 = jumpSpeed2;
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
 
 			if (horizontalDir == 0) {
@@ -116,7 +135,6 @@ public class PlayerBehaviour : MonoBehaviour {
 			}
 			if (Input.GetButtonDown ("Jump" + playerNumber)) {
 				airJumps--;
-				velocity.y = jumpForce;
 				currentState = PlayerState.JUMPING;
 				break;
 			}
@@ -125,6 +143,17 @@ public class PlayerBehaviour : MonoBehaviour {
 				currentState = PlayerState.JUMPING;
 			}
 			break;
+		}
+	}
+
+	void progresiveJump(){
+		if (Input.GetButton ("Jump" + playerNumber) && airTime > 0) {
+			velocity.y = Mathf.Min (jumpForce * jumpSpeed1, jumpForce);
+			airTime -= 0.25f;
+			if (jumpSpeed1 <= 1) {
+				jumpSpeed1 += 0.05f;
+			}
+			jumped = true;
 		}
 	}
 
