@@ -5,26 +5,28 @@ public class PickableSpawner : MonoBehaviour {
 
     [SerializeField]
     private float maxSpawns;
+    [SerializeField]
+    private GameObject[] spawnableObjects;
 
-    private List<ObjectSpawnPoint> possibleSpawnPoints = new List<ObjectSpawnPoint>();
+    private List<ObjectSpawnPoint> possibleSpawnPositions = new List<ObjectSpawnPoint>();
 
 
 	// Use this for initialization
 	void Start () {
         foreach(ObjectSpawnPoint spawnPoint in GetComponentsInChildren<ObjectSpawnPoint>()) {
-            possibleSpawnPoints.Add(spawnPoint);
+            possibleSpawnPositions.Add(spawnPoint);
         }
 
         for(int i = 0; i < maxSpawns; i++) {
-            ObjectSpawnPoint selected = pickRandom(possibleSpawnPoints);
-            possibleSpawnPoints.Remove(selected);            
-            selected.spawn();
+            ObjectSpawnPoint selected = pickRandomPosition(possibleSpawnPositions);
+            possibleSpawnPositions.Remove(selected);            
+            selected.spawn(spawnableObjects);
         }
         
 	}
 
-    private ObjectSpawnPoint pickRandom(List<ObjectSpawnPoint> possibleSpawnPoints) {
-        int index = Random.Range(0, possibleSpawnPoints.ToArray().Length);
-        return (ObjectSpawnPoint)possibleSpawnPoints.ToArray()[index];
+    private ObjectSpawnPoint pickRandomPosition(List<ObjectSpawnPoint> possibleSpawnPositions) {
+        int index = Random.Range(0, possibleSpawnPositions.ToArray().Length);
+        return (ObjectSpawnPoint)possibleSpawnPositions.ToArray()[index];
     }
 }

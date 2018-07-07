@@ -2,10 +2,7 @@
 
 public class ObjectSpawnPoint : MonoBehaviour {
 
-    [SerializeField]
-    private GameObject[] spawnableObjects;
-
-    public void spawn() {
+    public void spawn(GameObject[] spawnableObjects) {
         Instantiate(pickRandomSpawnableObject(spawnableObjects), this.transform);
     }
 
