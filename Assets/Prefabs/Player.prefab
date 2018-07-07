@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114054441471924440}
   - component: {fileID: 61352843460076610}
   - component: {fileID: 70879982382609722}
+  - component: {fileID: 114311677991502134}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -214,3 +215,16 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   currentState: 0
   airJumps: 1
+--- !u!114 &114311677991502134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557795065019662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75be0a6b006584738a0b75fb68a790d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCatcher: 0
+  isPlayerOne: 1
