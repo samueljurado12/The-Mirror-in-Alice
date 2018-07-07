@@ -10,32 +10,27 @@ public class ScoreService
 
     static ScoreService instance;
 
-    internal static ScoreService getInstance()
-    {
+    internal static ScoreService getInstance() {
         if (instance == null) {
             instance = new ScoreService();
         }
         return instance;
     }
 
-    internal void increasePlayer1Score(int score)
-    {
+    internal void increasePlayer1Score(int score) {
         player1Score += score;
     }
 
-    internal void increasePlayer2Score(int score)
-    {
+    internal void increasePlayer2Score(int score) {
         player2Score += score;
     }
 
-    internal void decreasePlayer1Score(int score)
-    {
+    internal void decreasePlayer1Score(int score) {
         player1Score -= score;
         if (player1Score < 0) player1Score = 0;
     }
 
-    internal void decreasePlayer2Score(int score)
-    {
+    internal void decreasePlayer2Score(int score) {
         player2Score -= score;
         if (player2Score < 0) player2Score = 0;
     }
