@@ -174,7 +174,7 @@ MonoBehaviour:
   - {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a, type: 2}
   - {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a, type: 2}
   - {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a, type: 2}
-  speed: 5
+  speed: 2
   chunksAhead: 5
 --- !u!114 &114554941776779922
 MonoBehaviour:
@@ -220,8 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunks:
-  - {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a, type: 2}
-  - {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a, type: 2}
-  - {fileID: 1117896769055066, guid: 9cbc8e6cb8df3b64e9e311079e96713a, type: 2}
-  speed: 5
+  - {fileID: 1117896769055066, guid: 2b4b1f39804465b4babc0781c64519a5, type: 2}
+  - {fileID: 1117896769055066, guid: 2b4b1f39804465b4babc0781c64519a5, type: 2}
+  speed: 2
   chunksAhead: 5
