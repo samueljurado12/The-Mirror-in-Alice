@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class GameModeSelector : MonoBehaviour/*, ISelectHandler */{
 
     public Button vsModeButton, coopModeButton, endlessModeButton;
-    public Image help;
 
 	// Use this for initialization
 	void Start () {
