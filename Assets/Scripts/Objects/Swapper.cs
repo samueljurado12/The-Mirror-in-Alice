@@ -20,11 +20,13 @@ public class Swapper : MonoBehaviour {
     }
 
     private void Update() {
-        if (upscreenObject) {
-            drawObjectsUpperScreen();
-        } else {
-            drawObjectsLowerScreen();
-        }
+		if (scoreUp && scoreDown) {
+			if (upscreenObject) {
+				drawObjectsUpperScreen();
+			} else {
+				drawObjectsLowerScreen();
+			}
+		}
     }
 
     private void drawObjectsLowerScreen() {
