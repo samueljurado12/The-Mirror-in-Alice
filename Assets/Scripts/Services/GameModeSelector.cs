@@ -23,29 +23,26 @@ public class GameModeSelector : MonoBehaviour/*, ISelectHandler */{
     void vsModeClicked()
     {
         //Output this to console when the Button is clicked
+        coopModeButton.interactable = false;
+        endlessModeButton.interactable = false;
         Debug.Log("You have clicked the vs mode!");
     }
 
     void coopModeClicked()
     {
         //Output this to console when the Button is clicked
+        vsModeButton.interactable = false;
+        endlessModeButton.interactable = false;
         Debug.Log("You have clicked the coop mode!");
     }
 
     void endlessModeClicked()
     {
         //Output this to console when the Button is clicked
+        coopModeButton.interactable = false;
+        vsModeButton.interactable = false;
         Debug.Log("You have clicked the endless mode!");
     }
 
-    //public void OnSelect(BaseEventData baseEventData) {
-    //    switch (baseEventData.selectedObject.name) {
-    //        case "VsButton":
-    //            help.material.color = Color.black;
-    //            break;
-    //        default:
-    //            break;
-    //    }
 
-    //}
 }
