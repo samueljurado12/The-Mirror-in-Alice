@@ -73,7 +73,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 Mathf.Max(velocity.y, -maxFallSpeed);
                 horizontalDir = Input.GetAxis("Horizontal" + playerNumber);
 
-                if (Input.GetKey(KeyCode.S)) {
+			if (Input.GetAxis("Vertical" + playerNumber) != 0) {				//Modified gravity in the input (project settings) for the vertical profiles.
                     velocity.y -= gravityForce * Time.deltaTime * fallForce;
                 }
                 if (horizontalDir == 0) {
