@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
+
 	private Rigidbody2D rb;
 	[Range (1, 2)]
 	public int playerNumber;
@@ -133,5 +134,4 @@ public class PlayerBehaviour : MonoBehaviour {
 		WALKING}
 
 	;
-
 }
