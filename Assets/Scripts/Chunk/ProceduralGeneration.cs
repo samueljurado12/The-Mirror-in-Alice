@@ -25,7 +25,7 @@ public class ProceduralGeneration : MonoBehaviour {
 			float currentChunkLength = chunk.GetComponent<Chunk>().length;
 			lastPosition += new Vector2 (lastChunkLength/2f + currentChunkLength/2, 0);
 			lastChunkLength = currentChunkLength;
-			GameObject newChunk = Instantiate (chunk, lastPosition, Quaternion.identity) as GameObject;
+			GameObject newChunk = Instantiate (chunk, lastPosition, Quaternion.identity, this.transform) as GameObject;
 			this.generatedChunks.Add (newChunk); 
 		}
 
@@ -40,7 +40,7 @@ public class ProceduralGeneration : MonoBehaviour {
 				GameObject newChunk = this.GetChunk ();
 				chunkLength = newChunk.GetComponent<Chunk> ().length;
 				Vector2 spawnPosition = this.GetNewSpawnPosition (chunkLength);
-				newChunk = Instantiate(newChunk, spawnPosition, Quaternion.identity) as GameObject;
+				newChunk = Instantiate(newChunk, spawnPosition, Quaternion.identity, this.transform) as GameObject;
 				this.generatedChunks.Add(newChunk);
 				Destroy (chunk.gameObject);
 			} else {
