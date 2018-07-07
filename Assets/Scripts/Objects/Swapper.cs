@@ -36,7 +36,6 @@ public class Swapper : MonoBehaviour {
     }
 
     public void swap() {
-        Debug.Log("Now this is " + (upscreenObject == upperScreenCanCatch ? "up":"down"));
         upperScreenCanCatch = !upperScreenCanCatch; 
     }
 
