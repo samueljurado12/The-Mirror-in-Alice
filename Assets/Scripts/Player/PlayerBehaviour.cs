@@ -16,7 +16,6 @@ public class PlayerBehaviour : MonoBehaviour {
     public Vector2 velocity;
     public PlayerState currentState;
     float horizontalDir = 0;
-    //float lastDir = 0;
     public int airJumps = 1;
 
 
@@ -62,14 +61,6 @@ public class PlayerBehaviour : MonoBehaviour {
                     currentState = PlayerState.WALKING;
                 }
 
-                //         if (Input.GetKey (KeyCode.A)) {
-                //         	horizontalDir = -1;
-                //	currentState = PlayerState.WALKING;
-                //} else if (Input.GetKey (KeyCode.D)) {
-                //	horizontalDir = 1;
-                //	currentState = PlayerState.WALKING;
-                //}
-
                 if (Input.GetButtonDown("Jump"+playerNumber)) {
                     velocity.y = jumpForce;
                     currentState = PlayerState.JUMPING;
@@ -82,31 +73,16 @@ public class PlayerBehaviour : MonoBehaviour {
                 Mathf.Max(velocity.y, -maxFallSpeed);
                 horizontalDir = Input.GetAxis("Horizontal" + playerNumber);
 
-                //if (Input.GetKey(KeyCode.A)) {
-                //    horizontalDir = -1;
-                //    //lastDir = horizontalDir;
-                //    //speedReduction = 0.95f;
-                //} else if (Input.GetKey(KeyCode.D)) {
-                //    horizontalDir = 1;
-                //    //lastDir = horizontalDir;
-                //    //speedReduction = 0.95f;
-                //} else {
-                //    horizontalDir = 0;
-                //}
-
                 if (Input.GetKey(KeyCode.S)) {
                     velocity.y -= gravityForce * Time.deltaTime * fallForce;
                 }
                 if (horizontalDir == 0) {
-                    velocity.x = 0;//lastDir * speed * speedReduction;
-                                   //peedReduction -= 0.01f;
+                    velocity.x = 0;
                 } else {
                     velocity.x = horizontalDir * speed;
                 }
 
                 if (onGround) {
-                    //speedReduction = 0.95f;
-                    //lastDir = 0;
                     if (horizontalDir == 0) {
                         currentState = PlayerState.STAND;
                     } else {
