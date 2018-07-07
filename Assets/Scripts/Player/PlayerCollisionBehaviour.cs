@@ -22,7 +22,9 @@ public class PlayerCollisionBehaviour : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("target")) {
+        if (collision.gameObject.CompareTag("Target")) {
+			Debug.Log ("Target hitted!");
+
             PickableObject target = collision.gameObject.GetComponent<PickableObject>();
             bool playerHasZeroLives = false;
 
@@ -45,8 +47,11 @@ public class PlayerCollisionBehaviour : MonoBehaviour
                     playerHasZeroLives = lifeService.player2LosesLife();
                 }
 
+				Debug.Log ("Swap");
+
+				Swapper.upperScreenCanCatch = !Swapper.upperScreenCanCatch;
+
                 if (playerHasZeroLives) {/*Game Over*/}
-                isCatcher = !isCatcher;
             }
 
             Destroy(collision.gameObject);
