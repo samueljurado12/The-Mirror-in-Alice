@@ -9,8 +9,13 @@ public class LevelManager : MonoBehaviour {
         SceneManager.LoadScene("01_MainMenu");
     }
 
-    public static void LoadScene(string sceneName) {
+    public void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void exit() {
+        Debug.Log("Exit requested");
+        Application.Quit();
     }
 
 }
