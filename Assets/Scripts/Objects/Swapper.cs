@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Swapper : MonoBehaviour {
 
-    private static bool upperScreenCanCatch;
+    public static bool upperScreenCanCatch;
 
     private PickableObject scoreUp, scoreDown;
 
-    [SerializeField]
-    private bool upscreenObject;
+    public bool upscreenObject;
 
     private void Start() {
         scoreUp = GetComponentsInChildren<PickableObject>()[0];

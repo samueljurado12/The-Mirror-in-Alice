@@ -56,7 +56,6 @@ public class ProceduralGeneration : MonoBehaviour {
 		} while (nextChunkIndex == this.lastChunkIndex);
 		this.lastChunkIndex = nextChunkIndex;
 		GameObject newChunk = this.chunks [nextChunkIndex];
-		Debug.Log ("Index: " + nextChunkIndex);
 		this.numberOfGeneratedChunks++;
 		return newChunk;
 	}
