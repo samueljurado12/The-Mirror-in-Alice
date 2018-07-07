@@ -24,6 +24,9 @@ public class PlayerBehaviour : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		currentState = PlayerState.STAND;
 		onGround = false;
+		if (playerNumber == 2) {
+			transform.localScale = new Vector3(-1, 1, 1);
+		}
 	}
 
 	void FixedUpdate () {
