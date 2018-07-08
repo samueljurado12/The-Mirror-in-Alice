@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/02c_EndlessTutorial.unity
     guid: 3a1c85c0ffc83478a94fc2a3de48a394
   - enabled: 1
+    path: Assets/Scenes/03_vsMode.unity
+    guid: ee094a123ae63a642aa973d7bee4002f
+  - enabled: 1
     path: Assets/Scenes/GanarFalsa.unity
     guid: 7381cde3f44cb2243ba23d72e1ccab34
   - enabled: 1
