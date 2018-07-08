@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 971764517}
   - component: {fileID: 971764519}
   - component: {fileID: 971764518}
+  - component: {fileID: 971764520}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -378,6 +379,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 971764516}
+--- !u!95 &971764520
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971764516}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 356451b3cdcea4c16936e9ac449b279a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1104349756
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 477752083}
+  animator: {fileID: 971764520}
 --- !u!1 &1239422943
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 477752083}
+  animator: {fileID: 971764520}
 --- !u!1 &1265049338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 477752083}
+  animator: {fileID: 971764520}
 --- !u!1 &1701850667
 GameObject:
   m_ObjectHideFlags: 0
