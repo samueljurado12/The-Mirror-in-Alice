@@ -52,7 +52,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.CompareTag ("Ground")) {
-			velocity.y = -3f;
+			velocity.y = -1f;
 		}
 	}
 
@@ -123,7 +123,13 @@ public class PlayerBehaviour : MonoBehaviour {
 					setFacing (horizontalDir);
 				}
 			} else {
-				velocity.x = horizontalDir * speed;
+				if (playerNumber == 1 && horizontalDir == -1) {
+					velocity.x = speed * horizontalDir - DifficultyService.difficulty * 2;
+				} else if (playerNumber == 2 && horizontalDir == 1) {
+					velocity.x = speed * horizontalDir + DifficultyService.difficulty * 2;
+				} else {
+					velocity.x = speed * horizontalDir;
+				}
 			}
 
 			if (onGround) {
@@ -164,7 +170,13 @@ public class PlayerBehaviour : MonoBehaviour {
 					setFacing (horizontalDir);
 				}
 			} else {
-				velocity.x = horizontalDir * speed;
+				if (playerNumber == 1 && horizontalDir == -1) {
+					velocity.x = speed * horizontalDir - DifficultyService.difficulty * 2;
+				} else if (playerNumber == 2 && horizontalDir == 1) {
+					velocity.x = speed * horizontalDir + DifficultyService.difficulty * 2;
+				} else {
+					velocity.x = speed * horizontalDir;
+				}
 			}
 			if (onGround) {
 				if (horizontalDir == 0) {
@@ -179,7 +191,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		case PlayerState.WALKING:
 			if (playerNumber == 1) {
 				setFacing (horizontalDir);
-			}else if(playerNumber == 2){
+			} else if (playerNumber == 2) {
 				setFacing (horizontalDir);
 			}
 			anim.Play ("CarreraNew");
@@ -195,7 +207,14 @@ public class PlayerBehaviour : MonoBehaviour {
 				currentState = PlayerState.JUMPING;
 				break;
 			}
-			velocity.x = speed * horizontalDir;
+
+			if (playerNumber == 1 && horizontalDir == -1) {
+				velocity.x = speed * horizontalDir - DifficultyService.difficulty * 2;
+			} else if (playerNumber == 2 && horizontalDir == 1) {
+				velocity.x = speed * horizontalDir + DifficultyService.difficulty * 2;
+			} else {
+				velocity.x = speed * horizontalDir;
+			}
 			if (!onGround) {
 				currentState = PlayerState.JUMPING;
 			}
