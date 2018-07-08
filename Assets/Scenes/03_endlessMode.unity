@@ -1281,7 +1281,7 @@ MonoBehaviour:
   chunks:
   - {fileID: 1839243654925490, guid: 61f3e53ec2a3e414a870c0875d44a159, type: 2}
   - {fileID: 1839243654925490, guid: 61f3e53ec2a3e414a870c0875d44a159, type: 2}
-  speed: 1
+  speed: -3
   chunksAhead: 5
   isHigh: 1
   zindex: 0
