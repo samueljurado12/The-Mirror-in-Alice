@@ -51,12 +51,11 @@ GameObject:
   - component: {fileID: 4369866005482342}
   - component: {fileID: 50641845071641354}
   - component: {fileID: 114284762650916512}
-  - component: {fileID: 61050556242864338}
   - component: {fileID: 70905396006942094}
   - component: {fileID: 114235844095706630}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +85,22 @@ GameObject:
   - component: {fileID: 4090156406338030}
   m_Layer: 0
   m_Name: Bip01 R Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1112503606655916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4808598213169118}
+  - component: {fileID: 61714275948126180}
+  m_Layer: 0
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,10 +657,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078622890381544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5937965, y: 0.741085, z: -2}
+  m_LocalPosition: {x: -6.0516148, y: -0.92478335, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4737323599981280}
+  - {fileID: 4808598213169118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -776,6 +792,19 @@ Transform:
   m_Father: {fileID: 4335314586130104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 88.667625, y: -109.82642, z: -98.1691}
+--- !u!4 &4808598213169118
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112503606655916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4369866005482342}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4837129270079112
 Transform:
   m_ObjectHideFlags: 1
@@ -939,12 +968,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61050556242864338
+--- !u!61 &61714275948126180
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1078622890381544}
+  m_GameObject: {fileID: 1112503606655916}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}

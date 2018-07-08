@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114812446831760514}
   - component: {fileID: 61621184886720464}
   - component: {fileID: 82615111799495498}
+  - component: {fileID: 50751943843655158}
   m_Layer: 0
   m_Name: Taza
   m_TagString: Target
@@ -62,6 +63,7 @@ GameObject:
   - component: {fileID: 114366007441871956}
   - component: {fileID: 61949990813199730}
   - component: {fileID: 82630224753678182}
+  - component: {fileID: 50664596573611178}
   m_Layer: 0
   m_Name: Carta_roja
   m_TagString: Target
@@ -192,6 +194,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1211142368167754}
   m_Mesh: {fileID: 4300000, guid: 070e8c2ed60ef7547b9fc58b95c680f4, type: 3}
+--- !u!50 &50664596573611178
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1615518146125250}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50751943843655158
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1211142368167754}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61621184886720464
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -448,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCatchable: 1
+  clip: {fileID: 0}
   score: 20
 --- !u!114 &114812446831760514
 MonoBehaviour:
@@ -461,6 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCatchable: 0
+  clip: {fileID: 0}
   score: 20
 --- !u!114 &114842983289331264
 MonoBehaviour:

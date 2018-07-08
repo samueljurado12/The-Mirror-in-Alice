@@ -18,10 +18,8 @@ public class PlayerCollisionBehaviour : MonoBehaviour {
 	private void OnTriggerEnter2D (Collider2D collision) {
 		if (collision.gameObject.CompareTag ("Target")) {
 			Debug.Log ("Target hitted!");
-
 			PickableObject target = collision.gameObject.GetComponent<PickableObject> ();
 			bool playerHasZeroLives = false;
-
 			if (target.isCatchable == isCatcher) {
 				if (isPlayerOne) {
 					scoreService.increasePlayer1Score (target.score);
@@ -29,8 +27,8 @@ public class PlayerCollisionBehaviour : MonoBehaviour {
 					scoreService.increasePlayer2Score (target.score);
 				}
 
-			} else {
-				if (isPlayerOne) {
+			} else if (target.canDamage) {
+				if (isPlayerOne ) {
 					scoreService.decreasePlayer1Score (target.score);
 					playerHasZeroLives = lifeService.player1LosesLife ();
 
@@ -43,9 +41,8 @@ public class PlayerCollisionBehaviour : MonoBehaviour {
 
 				Swapper.upperScreenCanCatch = !Swapper.upperScreenCanCatch;
 
-				if (playerHasZeroLives) {/*Game Over*/
-				}
 			}
+			target.canDamage = false;
 			target.PlaySound ();
 			Destroy (collision.gameObject);
 		}

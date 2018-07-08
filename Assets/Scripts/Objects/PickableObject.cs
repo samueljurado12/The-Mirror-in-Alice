@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PickableObject : MonoBehaviour {
 
+	public bool canDamage = true;
     public bool isCatchable;
 	public AudioClip clip;
 	public int score;
 
 	// Use this for initialization
 	void Start () {
+		canDamage = true;
 		clip = GetComponent<AudioSource> ().clip;
 	}
 	
