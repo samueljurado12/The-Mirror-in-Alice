@@ -52,7 +52,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.CompareTag ("Ground")) {
-			velocity.y = 0;
+			velocity.y = -3f;
 		}
 	}
 
