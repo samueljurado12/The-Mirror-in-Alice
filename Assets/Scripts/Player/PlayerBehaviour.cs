@@ -79,8 +79,10 @@ public class PlayerBehaviour : MonoBehaviour {
 
 			if (playerNumber == 1) {
 				velocity.x = -DifficultyService.difficulty * 2;
+				setFacing (horizontalDir);
 			}else if(playerNumber == 2){
 				velocity.x = DifficultyService.difficulty * 2;
+				setFacing (horizontalDir);
 			}
 
 
@@ -198,10 +200,22 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void setFacing (float horizontalDir) {
 		Vector3 vScale = Vector3.one;
-		if (horizontalDir == 1) {
-			vScale.x = horizontalDir;
-		} else if (horizontalDir == -1) {
-			vScale.x = horizontalDir;
+		if (playerNumber == 1) {
+			if (horizontalDir == 1) {
+				vScale.x = horizontalDir;
+			} else if (horizontalDir == -1) {
+				vScale.x = horizontalDir;
+			} else {
+				vScale.x = 1;
+			}
+		} else if (playerNumber == 2) {
+			if (horizontalDir == 1) {
+				vScale.x = horizontalDir;
+			} else if (horizontalDir == -1) {
+				vScale.x = horizontalDir;
+			} else {
+				vScale.x = -1;
+			}
 		}
 		transform.localScale = vScale;
 	}
