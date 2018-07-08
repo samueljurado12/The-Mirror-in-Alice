@@ -1033,7 +1033,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1764173077}
   - component: {fileID: 1764173079}
-  - component: {fileID: 1764173078}
   m_Layer: 0
   m_Name: DeathTriggerLateral (1)
   m_TagString: Untagged
@@ -1055,20 +1054,6 @@ Transform:
   m_Father: {fileID: 1208294635}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &1764173078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114735078459046896, guid: e7820901d417f9a4dbb5c49e05e05cf9,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1764173076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ddf6824c0111484d85fab1466f5c243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1853313696}
-  lifeService: {fileID: 0}
 --- !u!61 &1764173079
 BoxCollider2D:
   m_ObjectHideFlags: 0
