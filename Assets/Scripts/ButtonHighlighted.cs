@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ButtonHighlighted : MonoBehaviour, ISelectHandler, IPointerEnterHandler
 {
-    public Image help;
+    //public Image help;
 
     // When highlighted with mouse.
     public void OnPointerEnter(PointerEventData eventData)
@@ -24,23 +24,23 @@ public class ButtonHighlighted : MonoBehaviour, ISelectHandler, IPointerEnterHan
     // When selected with buttons or gamepad.
     public void OnSelect(BaseEventData eventData)
     {
-        if (eventData != null)
-        {
-            switch (eventData.selectedObject.name)
-            {
-                case "VsButton":
-                    help.color = Color.black;
-                    break;
-                case "CoopButton":
-                    help.color = Color.cyan;
-                    break;
-                case "EndlessButton":
-                    help.color = Color.magenta;
-                    break;
-                default:
-                    break;
-            }
-        }
+        //if (eventData != null)
+        //{
+        //    switch (eventData.selectedObject.name)
+        //    {
+        //        case "VsButton":
+        //            help.color = Color.black;
+        //            break;
+        //        case "CoopButton":
+        //            help.color = Color.cyan;
+        //            break;
+        //        case "EndlessButton":
+        //            help.color = Color.magenta;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
     }
 
 }
