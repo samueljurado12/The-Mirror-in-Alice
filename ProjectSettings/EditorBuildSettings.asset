@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/03_vsMode.unity
     guid: ee094a123ae63a642aa973d7bee4002f
   - enabled: 1
+    path: Assets/Scenes/03_coopMode.unity
+    guid: bb456615cd3339e4bbf15a1597afb992
+  - enabled: 1
     path: Assets/Scenes/GanarFalsa.unity
     guid: 7381cde3f44cb2243ba23d72e1ccab34
   - enabled: 1
