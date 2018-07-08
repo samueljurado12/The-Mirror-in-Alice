@@ -46,6 +46,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void FixedUpdate () {
 		velocityUpdate ();
+		setFacing (horizontalDir);
 		rb.velocity = velocity;
 	}
 
@@ -132,7 +133,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		case PlayerState.DOUBLEJUMPING:
 			progresiveJump ();
-			anim.Play ("");
 			velocity.y -= gravityForce * Time.deltaTime;
 			velocity.y = Mathf.Max (velocity.y, -maxFallSpeed);
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
@@ -164,6 +164,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			if (horizontalDir == 0) {
 				currentState = PlayerState.STAND;
 			}
+
 			if (Input.GetButtonDown ("Jump" + playerNumber)) {
 				airJumps--;
 				currentState = PlayerState.JUMPING;
@@ -186,6 +187,12 @@ public class PlayerBehaviour : MonoBehaviour {
 			}
 			jumped = true;
 		}
+	}
+
+	void setFacing (float horizontalDir) {
+		Vector3 vScale = Vector3.one;
+		vScale.x = (horizontalDir == 1) ? 1 : -1;
+		transform.localScale = vScale;
 	}
 
 	public enum PlayerState {
