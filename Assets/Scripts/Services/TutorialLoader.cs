@@ -7,8 +7,12 @@ public class TutorialLoader : MonoBehaviour {
     [SerializeField]
     private LevelManager levelManager;
 
+    [SerializeField]
+    private Animator animator;
+
     public void loadCoopTutorial()
     {
+        
         levelManager.LoadScene("02a_CoopTutorial");
     }
 
@@ -20,5 +24,9 @@ public class TutorialLoader : MonoBehaviour {
     public void loadEndlessTutorial()
     {
         levelManager.LoadScene("02c_EndlessTutorial");
+    }
+
+    public void fadeOutCanvas() {
+        animator.Play("FadeOut");
     }
 }

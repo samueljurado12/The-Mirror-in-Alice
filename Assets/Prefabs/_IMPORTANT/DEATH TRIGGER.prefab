@@ -37,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4549069719697736}
   - component: {fileID: 61464482437775228}
-  - component: {fileID: 114735078459046896}
   m_Layer: 0
   m_Name: DeathTriggerLateral (1)
   m_TagString: Untagged
@@ -120,7 +119,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4658082601250562}
   - component: {fileID: 61830413211334034}
-  - component: {fileID: 114427536243357622}
   m_Layer: 0
   m_Name: DeathTriggerLateralUp (1)
   m_TagString: Untagged
@@ -219,7 +217,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1704253967893114}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.04, y: -40.388794, z: -0.019265652}
+  m_LocalPosition: {x: 0.38, y: -40.388794, z: -0.019265652}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4855696672922700}
@@ -388,38 +386,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   lifeService: {fileID: 0}
---- !u!114 &114427536243357622
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1995701338984274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ddf6824c0111484d85fab1466f5c243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  lifeService: {fileID: 0}
 --- !u!114 &114529752138630592
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666133334873404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ddf6824c0111484d85fab1466f5c243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  lifeService: {fileID: 0}
---- !u!114 &114735078459046896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098538440056404}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ddf6824c0111484d85fab1466f5c243, type: 3}
