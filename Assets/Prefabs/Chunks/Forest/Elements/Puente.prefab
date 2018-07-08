@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 68276254603043442}
   m_Layer: 0
   m_Name: Puente
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 212892812906485652}
   m_Layer: 0
   m_Name: Suelo Puente
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374625788456624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.27739, y: -30.21089, z: -4.0595703}
+  m_LocalPosition: {x: 0.46294832, y: -24.696405, z: -4.0595703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4618811357756482}
@@ -111,8 +111,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323714920130748}
   m_LocalRotation: {x: -0, y: -0, z: -0.07881761, w: 0.99688905}
-  m_LocalPosition: {x: 0.684, y: -0.58600044, z: 0.059570312}
-  m_LocalScale: {x: 1.5940934, y: 1.5940934, z: 1.5940934}
+  m_LocalPosition: {x: 0.8188099, y: -0.73219043, z: 0.059570312}
+  m_LocalScale: {x: 1.9326049, y: 1.932604, z: 1.932604}
   m_Children: []
   m_Father: {fileID: 4573161134012288}
   m_RootOrder: 2
@@ -124,8 +124,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1837862451527668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.954, y: -0.312, z: 0.059570312}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.167, y: -0.4, z: 0.059570312}
+  m_LocalScale: {x: 1.2123536, y: 1.212353, z: 1.212353}
   m_Children: []
   m_Father: {fileID: 4573161134012288}
   m_RootOrder: 1
@@ -152,7 +152,7 @@ EdgeCollider2D:
   - {x: 3.5961075, y: -1.243227}
   - {x: 4.333643, y: -1.4029808}
   - {x: 6.1423283, y: -1.2193184}
-  - {x: 7.25358, y: -0.94495773}
+  - {x: 7.2397356, y: -0.94495773}
   - {x: 7.214983, y: -1.9560299}
   - {x: -7.0987883, y: -2.2298412}
   - {x: -7.2205544, y: -0.7683811}
