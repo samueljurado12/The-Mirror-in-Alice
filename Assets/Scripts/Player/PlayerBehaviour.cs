@@ -46,6 +46,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void FixedUpdate () {
 		velocityUpdate ();
+		setFacing (horizontalDir);
 		rb.velocity = velocity;
 	}
 
@@ -75,7 +76,14 @@ public class PlayerBehaviour : MonoBehaviour {
 		switch (currentState) {
 		case PlayerState.STAND:
 			anim.Play ("IDE");
-			velocity.x = 0;
+
+			if (playerNumber == 1) {
+				velocity.x = -DifficultyService.difficulty * 2;
+			}else if(playerNumber == 2){
+				velocity.x = DifficultyService.difficulty * 2;
+			}
+
+
 			jumpSpeed = jumpRate;
 
 			if (!onGround) {
@@ -132,7 +140,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		case PlayerState.DOUBLEJUMPING:
 			progresiveJump ();
-			anim.Play ("");
 			velocity.y -= gravityForce * Time.deltaTime;
 			velocity.y = Mathf.Max (velocity.y, -maxFallSpeed);
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
@@ -164,6 +171,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			if (horizontalDir == 0) {
 				currentState = PlayerState.STAND;
 			}
+
 			if (Input.GetButtonDown ("Jump" + playerNumber)) {
 				airJumps--;
 				currentState = PlayerState.JUMPING;
@@ -186,6 +194,16 @@ public class PlayerBehaviour : MonoBehaviour {
 			}
 			jumped = true;
 		}
+	}
+
+	void setFacing (float horizontalDir) {
+		Vector3 vScale = Vector3.one;
+		if (horizontalDir == 1) {
+			vScale.x = horizontalDir;
+		} else if (horizontalDir == -1) {
+			vScale.x = horizontalDir;
+		}
+		transform.localScale = vScale;
 	}
 
 	public enum PlayerState {
