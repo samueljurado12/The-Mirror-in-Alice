@@ -20,7 +20,8 @@ public class PickableObject : MonoBehaviour {
 
 	public void PlaySound() {
 		Debug.Log ("Playing " + clip);
-		AudioSource.PlayClipAtPoint (clip, transform.position);
-
+		if (clip) {
+			AudioSource.PlayClipAtPoint (clip, transform.position);
+		}
 	}
 }
