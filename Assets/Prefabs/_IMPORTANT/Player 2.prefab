@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCatcher: 0
-  isPlayerOne: 1
+  isPlayerOne: 0
 --- !u!137 &137562247226482658
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

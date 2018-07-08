@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCatcher: 0
-  isPlayerOne: 0
+  isPlayerOne: 1
 --- !u!114 &114881250223700642
 MonoBehaviour:
   m_ObjectHideFlags: 1

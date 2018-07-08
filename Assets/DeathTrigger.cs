@@ -16,8 +16,15 @@ public class DeathTrigger : MonoBehaviour {
 		ScoreService scoreService = ScoreService.getInstance ();
 		Debug.Log (collision.tag);
 		if (collision.gameObject.CompareTag ("Player1")) {
+
+			DifficultyService.difficulty = 2;
+			LifeService.player1Life = 3;
+			LifeService.player2Life = 3;
 			SceneManager.LoadScene (isCoop? "Cinematica":"GanarFalsa");
 		} else if (collision.gameObject.CompareTag ("Player2")) {
+			DifficultyService.difficulty = 2;
+			LifeService.player1Life = 3;
+			LifeService.player2Life = 3;
 			SceneManager.LoadScene (isCoop? "Cinematica":"GanarReal");
 		} else if (collision.gameObject.CompareTag ("Target")) {
 			Debug.Log ("Missed");
