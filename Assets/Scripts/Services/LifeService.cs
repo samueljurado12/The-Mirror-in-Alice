@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeService : MonoBehaviour {
 
-	public int player1Life, player2Life;
+	public static int player1Life = 3, player2Life = 3;
 
 	public Life vida1Player1;
 	public Life vida2Player1;
@@ -13,20 +13,6 @@ public class LifeService : MonoBehaviour {
 	public Life vida2Player2;
 	public Life vida3Player2;
 
-
-	void Start () {
-		player1Life = 3; //TODO: Use settings 
-		player2Life = 3; //TODO: Use settings
-	}
-
-	static LifeService instance;
-
-	internal static LifeService getInstance () {
-		if (instance == null) {
-			instance = new LifeService ();
-		}
-		return instance;
-	}
 
 	public void player1GainsLife () {
 		player1Life++;
@@ -56,9 +42,9 @@ public class LifeService : MonoBehaviour {
 		if (player2Life == 0) {
 			playerHasZeroLives = true;
 			vida1Player2.SwapSprites ();
-		} else if (player1Life == 1) {
+		} else if (player2Life == 1) {
 			vida2Player2.SwapSprites ();
-		} else if (player1Life == 2) {
+		} else if (player2Life == 2) {
 			vida3Player2.SwapSprites ();
 		}
 		return playerHasZeroLives;
