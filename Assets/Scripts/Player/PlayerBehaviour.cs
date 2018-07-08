@@ -58,7 +58,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.CompareTag ("Ground")) {
 			onGround = true;
-			anim.Play ("Aterrizaje");
+			//anim.Play ("Aterrizaje");
 			airJumps = 2;
 			airTime = maxTime;
 			jumped = false;
@@ -187,7 +187,6 @@ public class PlayerBehaviour : MonoBehaviour {
 			jumped = true;
 		}
 	}
-
 
 	public enum PlayerState {
 		STAND,
