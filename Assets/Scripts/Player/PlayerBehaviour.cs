@@ -85,7 +85,6 @@ public class PlayerBehaviour : MonoBehaviour {
 				setFacing (horizontalDir);
 			}
 
-
 			jumpSpeed = jumpRate;
 
 			if (!onGround) {
@@ -116,7 +115,13 @@ public class PlayerBehaviour : MonoBehaviour {
 				velocity.y -= gravityForce * Time.deltaTime * fallForce;
 			}
 			if (horizontalDir == 0) {
-				velocity.x = 0;
+				if (playerNumber == 1) {
+					velocity.x = -DifficultyService.difficulty * 2;
+					setFacing (horizontalDir);
+				}else if(playerNumber == 2){
+					velocity.x = DifficultyService.difficulty * 2;
+					setFacing (horizontalDir);
+				}
 			} else {
 				velocity.x = horizontalDir * speed;
 			}
@@ -151,7 +156,13 @@ public class PlayerBehaviour : MonoBehaviour {
 				velocity.y -= gravityForce * Time.deltaTime * fallForce;
 			}
 			if (horizontalDir == 0) {
-				velocity.x = 0;
+				if (playerNumber == 1) {
+					velocity.x = -DifficultyService.difficulty * 2;
+					setFacing (horizontalDir);
+				}else if(playerNumber == 2){
+					velocity.x = DifficultyService.difficulty * 2;
+					setFacing (horizontalDir);
+				}
 			} else {
 				velocity.x = horizontalDir * speed;
 			}
@@ -166,6 +177,11 @@ public class PlayerBehaviour : MonoBehaviour {
 			break;
 
 		case PlayerState.WALKING:
+			if (playerNumber == 1) {
+				setFacing (horizontalDir);
+			}else if(playerNumber == 2){
+				setFacing (horizontalDir);
+			}
 			anim.Play ("CarreraNew");
 			jumpSpeed = jumpRate;
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
@@ -201,18 +217,18 @@ public class PlayerBehaviour : MonoBehaviour {
 	void setFacing (float horizontalDir) {
 		Vector3 vScale = Vector3.one;
 		if (playerNumber == 1) {
-			if (horizontalDir == 1) {
-				vScale.x = horizontalDir;
-			} else if (horizontalDir == -1) {
-				vScale.x = horizontalDir;
+			if (horizontalDir > 0) {
+				vScale.x = 1;
+			} else if (horizontalDir < 0) {
+				vScale.x = -1;
 			} else {
 				vScale.x = 1;
 			}
 		} else if (playerNumber == 2) {
-			if (horizontalDir == 1) {
-				vScale.x = horizontalDir;
-			} else if (horizontalDir == -1) {
-				vScale.x = horizontalDir;
+			if (horizontalDir > 0) {
+				vScale.x = 1;
+			} else if (horizontalDir < 0) {
+				vScale.x = -1;
 			} else {
 				vScale.x = -1;
 			}
