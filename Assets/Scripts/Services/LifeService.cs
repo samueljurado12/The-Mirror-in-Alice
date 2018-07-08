@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeService : MonoBehaviour {
 
@@ -27,6 +28,7 @@ public class LifeService : MonoBehaviour {
 		player1Life--;
 		if (player1Life == 0) {
 			playerHasZeroLives = true;
+			SceneManager.LoadScene ("GanarFalsa");
 			vida1Player1.SwapSprites ();
 		} else if (player1Life == 1) {
 			vida2Player1.SwapSprites ();
@@ -40,6 +42,7 @@ public class LifeService : MonoBehaviour {
 		bool playerHasZeroLives = false;
 		player2Life--;
 		if (player2Life == 0) {
+			SceneManager.LoadScene ("GanarReal");
 			playerHasZeroLives = true;
 			vida1Player2.SwapSprites ();
 		} else if (player2Life == 1) {
