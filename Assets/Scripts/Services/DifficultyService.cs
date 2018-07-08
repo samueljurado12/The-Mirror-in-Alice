@@ -12,8 +12,8 @@ public class DifficultyService : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		difficulty += (1 / Mathf.Pow(difficulty, 2))/5 * Time.deltaTime;
-		Debug.Log (difficulty);
+		difficulty += (1 / Mathf.Pow (difficulty, 2)) / 5 * Time.deltaTime;
+	
 
 	}
 }
