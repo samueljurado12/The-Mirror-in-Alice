@@ -10,6 +10,8 @@ public class ProceduralGeneration : MonoBehaviour {
 	public int chunksAhead = 3;
 	public bool isHigh;
 
+	public int zindex = 0;
+
 	private List<GameObject> generatedChunks;
 	private int lastChunkIndex = -1;
 	private int numberOfGeneratedChunks = 0;
