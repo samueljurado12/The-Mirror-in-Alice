@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class DeathTrigger : MonoBehaviour {
 	public PlayerCollisionBehaviour player;
 	public LifeService lifeService;
+
+	public bool isCoop = false;
 	void Start() {
 		lifeService = FindObjectOfType<LifeService> ();
 	}
@@ -14,9 +16,9 @@ public class DeathTrigger : MonoBehaviour {
 		ScoreService scoreService = ScoreService.getInstance ();
 		Debug.Log (collision.tag);
 		if (collision.gameObject.CompareTag ("Player1")) {
-			SceneManager.LoadScene ("GanarFalsa");
+			SceneManager.LoadScene (isCoop? "Cinematica":"GanarFalsa");
 		} else if (collision.gameObject.CompareTag ("Player2")) {
-			SceneManager.LoadScene ("GanarReal");
+			SceneManager.LoadScene (isCoop? "Cinematica":"GanarReal");
 		} else if (collision.gameObject.CompareTag ("Target")) {
 			Debug.Log ("Missed");
 			PickableObject target = collision.gameObject.GetComponent<PickableObject> ();
