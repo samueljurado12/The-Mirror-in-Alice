@@ -46,7 +46,7 @@ public class PlayerCollisionBehaviour : MonoBehaviour {
 				if (playerHasZeroLives) {/*Game Over*/
 				}
 			}
-
+			target.PlaySound ();
 			Destroy (collision.gameObject);
 		}
 	}

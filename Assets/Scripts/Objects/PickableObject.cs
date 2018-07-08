@@ -5,14 +5,22 @@ using UnityEngine;
 public class PickableObject : MonoBehaviour {
 
     public bool isCatchable;
-    public int score;
+	public AudioClip clip;
+	public int score;
 
 	// Use this for initialization
 	void Start () {
+		clip = GetComponent<AudioSource> ().clip;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		transform.Rotate (Vector3.up);
+	}
+
+	public void PlaySound() {
+		Debug.Log ("Playing " + clip);
+		AudioSource.PlayClipAtPoint (clip, transform.position);
+
 	}
 }
