@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4449418570417808}
   - component: {fileID: 212982864481416962}
   - component: {fileID: 68091416452502504}
+  - component: {fileID: 114019841195664732}
   m_Layer: 0
   m_Name: CITYsueloplataforma4
   m_TagString: Ground
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1936197844374880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10432577, y: -30.585752, z: 0}
+  m_LocalPosition: {x: 36.076378, y: -30.362822, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,6 +65,18 @@ EdgeCollider2D:
   - {x: -0.5442357, y: 0.9464283}
   - {x: 6.972296, y: 0.45118523}
   - {x: 0.9962921, y: -0.66179657}
+--- !u!114 &114019841195664732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936197844374880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e2dfe877c5a3a43bb631987883a8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 12.0875
 --- !u!212 &212982864481416962
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -97,7 +110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 00a7e192b2bb9b64ea48d2ae2a941441, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
