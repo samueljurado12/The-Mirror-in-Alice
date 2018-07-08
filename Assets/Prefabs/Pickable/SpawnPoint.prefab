@@ -51,4 +51,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2010595543ce7944b9ba97f56d1afcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnableObjects: []
