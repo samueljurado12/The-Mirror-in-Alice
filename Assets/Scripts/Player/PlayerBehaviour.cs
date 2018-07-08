@@ -10,6 +10,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public int playerNumber;
 
 	public float speed;
+	public float pullSpeed;
 	public float jumpForce;
 	public float jumpSpeed;
 	public float jumpRate;
@@ -24,6 +25,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	public Vector2 velocity;
 	public PlayerState currentState;
 
+	private Animator anim;
+
 	float horizontalDir = 0;
 	float verticalDir = 0;
 	float airTime;
@@ -32,6 +35,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+		anim = GetComponentInChildren<Animator> ();
 		currentState = PlayerState.STAND;
 		onGround = false;
 		airTime = 0;
