@@ -26,14 +26,6 @@ public class GameModeSelector : MonoBehaviour {
         coopModeButton.interactable = false;
         endlessModeButton.interactable = false;
 
-        if (confirmSelection()) {
-            //TODO: Go to vs Scene
-        }
-        else {
-            coopModeButton.interactable = true;
-            endlessModeButton.interactable = true;
-        }
-
     }
 
     void coopModeClicked()
@@ -41,15 +33,6 @@ public class GameModeSelector : MonoBehaviour {
         //Output this to console when the Button is clicked
         vsModeButton.interactable = false;
         endlessModeButton.interactable = false;
-        if (confirmSelection())
-        {
-            //TODO: Go to coop Scene
-        }
-        else
-        {
-            vsModeButton.interactable = true;
-            endlessModeButton.interactable = true;
-        }
 
     }
 
@@ -58,20 +41,7 @@ public class GameModeSelector : MonoBehaviour {
         //Output this to console when the Button is clicked
         coopModeButton.interactable = false;
         vsModeButton.interactable = false;
-        if (confirmSelection())
-        {
-            //TODO: Go to enles Scene
-        }
-        else
-        {
-            coopModeButton.interactable = true;
-            vsModeButton.interactable = true;
-        }
 
-    }
-
-    private bool confirmSelection() {
-        return true; //TODO: Ask user for confirmation
     }
 
 
