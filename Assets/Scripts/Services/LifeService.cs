@@ -7,6 +7,8 @@ public class LifeService : MonoBehaviour {
 
 	public static int player1Life = 3, player2Life = 3;
 
+	public bool isCoop = false;
+
 	public static float timeSinceLastHit1 = 0;
 	public static float timeSinceLastHit2 = 0;
 
@@ -39,7 +41,7 @@ public class LifeService : MonoBehaviour {
 
 			if (player1Life == 0) {
 				playerHasZeroLives = true;
-				SceneManager.LoadScene ("GanarFalsa");
+				SceneManager.LoadScene (isCoop? "Cinematica":"GanarFalsa");
 				vida1Player1.SwapSprites ();
 			} else if (player1Life == 1) {
 				vida2Player1.SwapSprites ();
@@ -56,7 +58,7 @@ public class LifeService : MonoBehaviour {
 		if (timeSinceLastHit2 > 2) {
 			player2Life--;
 			if (player2Life == 0) {
-				SceneManager.LoadScene ("GanarReal");
+				SceneManager.LoadScene (isCoop? "Cinematica":"GanarReal");
 				playerHasZeroLives = true;
 				vida1Player2.SwapSprites ();
 			} else if (player2Life == 1) {
