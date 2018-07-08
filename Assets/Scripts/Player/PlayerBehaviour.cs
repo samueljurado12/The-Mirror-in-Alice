@@ -10,6 +10,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public int playerNumber;
 
 	public float speed;
+	public float pullSpeed;
 	public float jumpForce;
 	public float jumpSpeed;
 	public float jumpRate;
@@ -24,6 +25,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	public Vector2 velocity;
 	public PlayerState currentState;
 
+	private Animator anim;
+
 	float horizontalDir = 0;
 	float verticalDir = 0;
 	float airTime;
@@ -32,6 +35,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+		anim = GetComponentInChildren<Animator> ();
 		currentState = PlayerState.STAND;
 		onGround = false;
 		airTime = 0;
@@ -42,6 +46,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void FixedUpdate () {
 		velocityUpdate ();
+		setFacing (horizontalDir);
 		rb.velocity = velocity;
 	}
 
@@ -54,6 +59,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.CompareTag ("Ground")) {
 			onGround = true;
+			//anim.Play ("Aterrizaje");
 			airJumps = 2;
 			airTime = maxTime;
 			jumped = false;
@@ -69,7 +75,15 @@ public class PlayerBehaviour : MonoBehaviour {
 	void velocityUpdate () {
 		switch (currentState) {
 		case PlayerState.STAND:
-			velocity.x = 0;
+			anim.Play ("IDE");
+
+			if (playerNumber == 1) {
+				velocity.x = -DifficultyService.difficulty * 2;
+			}else if(playerNumber == 2){
+				velocity.x = DifficultyService.difficulty * 2;
+			}
+
+
 			jumpSpeed = jumpRate;
 
 			if (!onGround) {
@@ -81,6 +95,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			}
 
 			if (Input.GetButtonDown ("Jump" + playerNumber)) {
+				anim.Play ("SALTO");
 				airJumps--;
 				currentState = PlayerState.JUMPING;
 				break;
@@ -89,6 +104,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		case PlayerState.JUMPING:
 			progresiveJump ();
+			anim.Play ("SaltoIDE");
 			velocity.y -= gravityForce * Time.deltaTime;
 			velocity.y = Mathf.Max (velocity.y, -maxFallSpeed);
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
@@ -148,12 +164,14 @@ public class PlayerBehaviour : MonoBehaviour {
 			break;
 
 		case PlayerState.WALKING:
+			anim.Play ("CarreraNew");
 			jumpSpeed = jumpRate;
 			horizontalDir = Input.GetAxis ("Horizontal" + playerNumber);
 
 			if (horizontalDir == 0) {
 				currentState = PlayerState.STAND;
 			}
+
 			if (Input.GetButtonDown ("Jump" + playerNumber)) {
 				airJumps--;
 				currentState = PlayerState.JUMPING;
@@ -178,6 +196,15 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 	}
 
+	void setFacing (float horizontalDir) {
+		Vector3 vScale = Vector3.one;
+		if (horizontalDir == 1) {
+			vScale.x = horizontalDir;
+		} else if (horizontalDir == -1) {
+			vScale.x = horizontalDir;
+		}
+		transform.localScale = vScale;
+	}
 
 	public enum PlayerState {
 		STAND,

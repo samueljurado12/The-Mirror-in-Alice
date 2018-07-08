@@ -62,7 +62,7 @@ public class ProceduralGeneration : MonoBehaviour {
 					this.generatedChunks.Add (newChunk);
 					Destroy (chunk.gameObject);
 				} else {
-					chunk.transform.Translate (Vector3.left * speed * Time.deltaTime);
+					chunk.transform.Translate (Vector3.left * speed * DifficultyService.difficulty * Time.deltaTime);
 				}
 			} else {
 				if (chunk.transform.position.x - chunkLength * 2 >= this.transform.position.x) {
@@ -74,7 +74,7 @@ public class ProceduralGeneration : MonoBehaviour {
 					this.generatedChunks.Add (newChunk);
 					Destroy (chunk.gameObject);
 				} else {
-					chunk.transform.Translate (Vector3.left * -speed * Time.deltaTime);
+					chunk.transform.Translate (Vector3.left * -speed * DifficultyService.difficulty * Time.deltaTime);
 				}
 			}
 

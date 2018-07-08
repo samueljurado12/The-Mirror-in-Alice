@@ -12,12 +12,7 @@ public class PlayerCollisionBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scoreService = ScoreService.getInstance ();
-		lifeService = LifeService.getInstance ();
-	}
-
-	// Update is called once per frame
-	void Update () {
-
+		lifeService = FindObjectOfType<LifeService> ();
 	}
 
 	private void OnTriggerEnter2D (Collider2D collision) {
